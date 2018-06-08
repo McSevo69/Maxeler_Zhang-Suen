@@ -1,0 +1,87 @@
+package vectors;
+
+import com.maxeler.maxcompiler.v2.kernelcompiler.Kernel;
+import com.maxeler.maxcompiler.v2.kernelcompiler.KernelParameters;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEType;
+import com.maxeler.maxcompiler.v2.kernelcompiler.types.base.DFEVar;
+import com.maxeler.maxcompiler.v2.kernelcompiler.stdlib.core.CounterChain;
+
+class VectorsKernel extends Kernel {
+
+	static final DFEType dataType=dfeUInt(32);
+
+	//number of 0,1 patterns
+	DFEVar getA(DFEVar[] neighbors) {
+		DFEVar count = constant.var(dataType, 0);
+				
+		count += (neighbors[0] === 0 & neighbors[1] > 0) ? constant.var(dataType, 1) : 0; //p2 p3
+		count += (neighbors[1] === 0 & neighbors[2] > 0) ? constant.var(dataType, 1) : 0; //p3 p4
+	
+		count += (neighbors[2] === 0 & neighbors[3] > 0) ? constant.var(dataType, 1) : 0; //p4 p5	
+		count += (neighbors[3] === 0 & neighbors[4] > 0) ? constant.var(dataType, 1) : 0; //p5 p6	
+	
+		count += (neighbors[4] === 0 & neighbors[5] > 0) ? constant.var(dataType, 1) : 0; //p6 p7	
+		count += (neighbors[5] === 0 & neighbors[6] > 0) ? constant.var(dataType, 1) : 0; //p7 p8
+
+		count += (neighbors[6] === 0 & neighbors[7] > 0) ? constant.var(dataType, 1) : 0; //p8 p9
+		count += (neighbors[7] === 0 & neighbors[0] > 0) ? constant.var(dataType, 1) : 0; //p9 p2
+		
+		return count;
+	}
+ 
+	DFEVar getB(DFEVar[] neighbors) {
+		return neighbors[0] + neighbors[1] + neighbors[2] 
+			+ neighbors[3] + neighbors[4] + neighbors[5] 
+			+ neighbors[6] + neighbors[7];
+	}
+
+	DFEVar[] getNeighbors(DFEVar binaryImage, DFEVar x, DFEVar y, int width, int height) {
+
+		DFEVar[] neighbors = new DFEVar[8];
+
+		neighbors[0] = (y - 1 >= 0) ? stream.offset(binaryImage, -width) : constant.var(dataType, 0); //p2
+		neighbors[1] = (y - 1 >= 0 & x + 1 < width) ? stream.offset(binaryImage, -width + 1) : constant.var(dataType, 0); //p3
+		neighbors[2] = (x + 1 < width) ? stream.offset(binaryImage, +1) : constant.var(dataType, 0); //p4
+		neighbors[3] = (y + 1 < height & x + 1 < width) ? stream.offset(binaryImage, +width + 1) : constant.var(dataType, 0); //p5
+		neighbors[4] = (y + 1 < height) ? stream.offset(binaryImage, +width) : constant.var(dataType, 0); //p6
+		neighbors[5] = (y + 1 < height & x - 1 >= 0) ? stream.offset(binaryImage, +width - 1) : constant.var(dataType, 0); //p7
+		neighbors[6] = (x - 1 >= 0) ? stream.offset(binaryImage, -1) : constant.var(dataType, 0); //p8
+		neighbors[7] = (y - 1 >= 0 & x - 1 >= 0) ? stream.offset(binaryImage, -width - 1) : constant.var(dataType, 0); //p9
+
+		return neighbors;		
+	}	 
+
+	VectorsKernel(KernelParameters parameters, int width, int height, int loopNr) {
+		super(parameters);
+
+		// Input
+		DFEVar binaryImage = io.input("inImage", dataType, constant.var(dfeUInt(1), 1));
+		
+		//counters
+		CounterChain chain = control.count.makeCounterChain();
+		DFEVar y_cnt = chain.addCounter(height, 1);
+		DFEVar x_cnt = chain.addCounter(width, 1);
+
+		y_cnt = y_cnt.cast(dfeUInt(32));
+		x_cnt = x_cnt.cast(dfeUInt(32));
+
+		DFEVar[] neighbors = getNeighbors(binaryImage, x_cnt, y_cnt, width, height);
+		DFEVar a = getA(neighbors);
+		DFEVar b = getB(neighbors);
+					
+		//Output
+		DFEVar out = io.output("outImage", dataType, constant.var(dfeUInt(1), 1));
+
+		if (loopNr==0) {
+			out <== (binaryImage === 1 & 2 <= b & b <= 6 & a === 1
+				& (neighbors[0] * neighbors[2] * neighbors[4] === 0)
+				& (neighbors[2] * neighbors[4] * neighbors[6] === 0)) ? constant.var(dataType, 0) : binaryImage; 
+		} else {	
+			out <== (binaryImage === 1 & 2 <= b & b <= 6 & a === 1
+				& (neighbors[0] * neighbors[2] * neighbors[6] === 0)
+				& (neighbors[0] * neighbors[4] * neighbors[6] === 0)) ? constant.var(dataType, 0) : binaryImage; 
+		}
+				
+	}
+
+}

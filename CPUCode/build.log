@@ -1,0 +1,490 @@
+make -C ../RunRules/DFE maxfiles/Vectors.max
+make[1]: Entering directory `/home/a1308699/projects/ThinningAdvanced/RunRules/DFE'
+
+MaxCompiler Project Admin Tool Version 2015.2.00001
+ Copyright Maxeler Technologies 2010 - 2015. All rights reserved.
+
+Handler version 2
+Updating RunRule dependent Makefiles for RunRule 'DFE'
+	Updating: DFE
+Found makefiles: 1
+	Updated: DFE
+make -f Makefile.rules maxfiles/Vectors.max
+make[2]: Entering directory `/home/a1308699/projects/ThinningAdvanced/RunRules/DFE'
+test -f maxfiles/Vectors.max || env  MAX_BUILDPARAMS=" DFEModel=VECTIS  target=DFE  maxFileName=Vectors MPPREndCT='4' "  ant -v -f Vectors.xml
+Apache Ant version 1.7.1 compiled on August 24 2010
+Buildfile: Vectors.xml
+Detected Java version: 1.6 in: /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.38.x86_64/jre
+Detected OS: Linux
+parsing buildfile /home/a1308699/projects/ThinningAdvanced/RunRules/DFE/Vectors.xml with URI = file:/home/a1308699/projects/ThinningAdvanced/RunRules/DFE/Vectors.xml
+Project base dir set to: /home/a1308699/projects/ThinningAdvanced/EngineCode
+[antlib:org.apache.tools.ant] Could not load definitions from resource org/apache/tools/ant/antlib.xml. It could not be found.
+ [property] Loading Environment env.
+Property "-*-command-variables-*-" has not been set
+Property "env.MAXCOMPILERJCP" has not been set
+Property "env.CLASSPATH" has not been set
+Property "env.MAXCOMPILERNETDIR" has not been set
+Property "EnvClassPath" has not been set
+Property "maxcompilernetdirpath" has not been set
+Build sequence for target(s) `all' is [build, run, runresult, all]
+Complete build sequence is [build, run, runresult, all, help, clean, jar, ]
+
+build:
+Detected Java version: 1.6 in: /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.38.x86_64/jre
+Detected OS: Linux
+      [ant] calling target(s) [default] in build file /home/a1308699/projects/ThinningAdvanced/RunRules/DFE/Vectors_Build.xml
+parsing buildfile /home/a1308699/projects/ThinningAdvanced/RunRules/DFE/Vectors_Build.xml with URI = file:/home/a1308699/projects/ThinningAdvanced/RunRules/DFE/Vectors_Build.xml
+Project base dir set to: /home/a1308699/projects/ThinningAdvanced/EngineCode
+ [property] Loading Environment env.
+Property "-*-command-variables-*-" has not been set
+Property "env.MAXCOMPILERJCP" has not been set
+Property "env.CLASSPATH" has not been set
+Property "env.MAXCOMPILERNETDIR" has not been set
+Property "EnvClassPath" has not been set
+Property "maxcompilernetdirpath" has not been set
+Property "finalclasspath" has not been set
+      [ant] Entering /home/a1308699/projects/ThinningAdvanced/RunRules/DFE/Vectors_Build.xml...
+Build sequence for target(s) `all' is [clean, build, all]
+Complete build sequence is [clean, build, all, ]
+
+clean:
+   [delete] Deleting directory /home/a1308699/projects/ThinningAdvanced/RunRules/DFE/dist
+   [delete] Deleting directory /home/a1308699/projects/ThinningAdvanced/RunRules/DFE/dist/bin/vectors
+   [delete] Deleting directory /home/a1308699/projects/ThinningAdvanced/RunRules/DFE/dist/bin
+   [delete] Deleting directory /home/a1308699/projects/ThinningAdvanced/RunRules/DFE/dist
+
+build:
+    [mkdir] Created dir: /home/a1308699/projects/ThinningAdvanced/RunRules/DFE/dist
+    [mkdir] Created dir: /home/a1308699/projects/ThinningAdvanced/RunRules/DFE/dist/bin
+     [copy] No sources found.
+[maxjcompiler] 
+[maxjcompiler] 
+[maxjcompiler] Compiling to folder /home/a1308699/projects/ThinningAdvanced/RunRules/DFE/dist/bin
+[maxjcompiler] 
+[maxjcompiler] Compiling files and folders:
+[maxjcompiler] /home/a1308699/projects/ThinningAdvanced/EngineCode/src
+[maxjcompiler] 
+[maxjcompiler] Compiler options:
+[maxjcompiler] -noExit
+[maxjcompiler] -classpath
+[maxjcompiler] /opt/maxcompiler/lib/MaxCompiler.jar:/home/a1308699/projects/ThinningAdvanced/EngineCode/${EnvClassPath}
+[maxjcompiler] -d
+[maxjcompiler] /home/a1308699/projects/ThinningAdvanced/RunRules/DFE/dist/bin
+[maxjcompiler] incorrect classpath: /home/a1308699/projects/ThinningAdvanced/EngineCode/${EnvClassPath}
+
+all:
+      [ant] Exiting /home/a1308699/projects/ThinningAdvanced/RunRules/DFE/Vectors_Build.xml.
+
+run:
+dropping /home/a1308699/projects/ThinningAdvanced/EngineCode/${EnvClassPath} from path as it doesn't exist
+dropping /home/a1308699/projects/ThinningAdvanced/EngineCode/${EnvClassPath} from path as it doesn't exist
+     [java] Executing '/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.38.x86_64/jre/bin/java' with arguments:
+     [java] '-Xmx2048m'
+     [java] '-classpath'
+     [java] '/home/a1308699/projects/ThinningAdvanced/RunRules/DFE/dist/bin:/opt/maxcompiler/lib/MaxCompiler.jar'
+     [java] 'vectors.VectorsManager'
+     [java] 
+     [java] The ' characters around the executable and arguments are
+     [java] not part of the command.
+dropping /home/a1308699/projects/ThinningAdvanced/EngineCode/${EnvClassPath} from path as it doesn't exist
+dropping /home/a1308699/projects/ThinningAdvanced/EngineCode/${EnvClassPath} from path as it doesn't exist
+     [java] Setting environment variable: MAXSOURCEDIRS=src
+     [java] Fri 00:32: MaxCompiler version: 2015.2
+     [java] Fri 00:32: Build "Vectors" start time: Fri Jun 08 00:32:16 CEST 2018
+     [java] Fri 00:32: Main build process running as user a1308699 on host maxeler.mi.sanu.ac.rs
+     [java] Fri 00:32: Build location: /home/a1308699/projects/ThinningAdvanced/RunRules/DFE/maxfiles/Vectors_VECTIS_DFE
+     [java] Fri 00:32: Detailed build log available in "_build.log"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: ENGINE BUILD PARAMETERS
+     [java] Fri 00:32: 	        Build name: Vectors_VECTIS_DFE
+     [java] Fri 00:32: 	          DFEModel: VECTIS            
+     [java] Fri 00:32: 	       maxFileName: Vectors           
+     [java] Fri 00:32: 	            target: DFE               
+     [java] Fri 00:32: 	        enableMPCX: false             
+     [java] Fri 00:32: 	       MPPRStartCT: 1                 
+     [java] Fri 00:32: 	         MPPREndCT: 4                 
+     [java] Fri 00:32: 	       MPPRThreads: 1                 
+     [java] Fri 00:32: 	MPPRRetryThreshold: 0                 
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_0"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_0"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_1"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_1"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_2"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_2"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_3"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_3"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_4"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_4"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_5"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_5"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_6"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_6"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_7"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_7"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_8"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_8"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_9"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_9"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_10"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_10"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_11"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_11"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_12"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_12"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_13"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_13"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_14"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_14"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_15"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_15"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_16"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_16"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_17"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_17"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_18"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_18"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_19"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_19"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_20"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_20"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_21"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_21"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_22"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_22"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_23"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_23"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_24"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_24"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_25"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_25"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_26"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_26"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_27"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_27"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_28"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_28"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_29"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_29"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_30"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_30"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_31"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_31"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_32"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_32"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_33"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_33"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_34"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_34"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_35"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_35"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_36"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_36"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_37"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_37"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_38"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_38"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_39"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_39"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_40"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_40"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_41"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_41"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_42"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_42"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_43"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_43"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_44"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_44"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_45"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_45"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_46"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_46"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_47"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_47"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_48"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_48"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart1_49"
+     [java] Fri 00:32: Instantiating kernel "ThinKernelPart2_49"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart1_0"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart2_0"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart1_1"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart2_1"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart1_2"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart2_2"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart1_3"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart2_3"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart1_4"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart2_4"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart1_5"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart2_5"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart1_6"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart2_6"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart1_7"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart2_7"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart1_8"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart2_8"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart1_9"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart2_9"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart1_10"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart2_10"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart1_11"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart2_11"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart1_12"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart2_12"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart1_13"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart2_13"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart1_14"
+     [java] Fri 00:32: 
+     [java] Fri 00:32: Compiling kernel "ThinKernelPart2_14"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart1_15"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart2_15"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart1_16"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart2_16"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart1_17"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart2_17"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart1_18"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart2_18"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart1_19"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart2_19"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart1_20"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart2_20"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart1_21"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart2_21"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart1_22"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart2_22"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart1_23"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart2_23"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart1_24"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart2_24"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart1_25"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart2_25"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart1_26"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart2_26"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart1_27"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart2_27"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart1_28"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart2_28"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart1_29"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart2_29"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart1_30"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart2_30"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart1_31"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart2_31"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart1_32"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart2_32"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart1_33"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart2_33"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart1_34"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart2_34"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart1_35"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart2_35"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart1_36"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart2_36"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart1_37"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart2_37"
+     [java] Fri 00:33: 
+     [java] Fri 00:33: Compiling kernel "ThinKernelPart1_38"
+     [java] Fri 00:34: 
+     [java] Fri 00:34: Compiling kernel "ThinKernelPart2_38"
+     [java] Fri 00:34: 
+     [java] Fri 00:34: Compiling kernel "ThinKernelPart1_39"
+     [java] Fri 00:34: 
+     [java] Fri 00:34: Compiling kernel "ThinKernelPart2_39"
+     [java] Fri 00:34: 
+     [java] Fri 00:34: Compiling kernel "ThinKernelPart1_40"
+     [java] Fri 00:34: 
+     [java] Fri 00:34: Compiling kernel "ThinKernelPart2_40"
+     [java] Fri 00:34: 
+     [java] Fri 00:34: Compiling kernel "ThinKernelPart1_41"
+     [java] Fri 00:34: 
+     [java] Fri 00:34: Compiling kernel "ThinKernelPart2_41"
+     [java] Fri 00:34: 
+     [java] Fri 00:34: Compiling kernel "ThinKernelPart1_42"
+     [java] Fri 00:34: 
+     [java] Fri 00:34: Compiling kernel "ThinKernelPart2_42"
+     [java] Fri 00:34: 
+     [java] Fri 00:34: Compiling kernel "ThinKernelPart1_43"
+     [java] Fri 00:34: 
+     [java] Fri 00:34: Compiling kernel "ThinKernelPart2_43"
+     [java] Fri 00:34: 
+     [java] Fri 00:34: Compiling kernel "ThinKernelPart1_44"
+     [java] Fri 00:34: 
+     [java] Fri 00:34: Compiling kernel "ThinKernelPart2_44"
+     [java] Fri 00:34: 
+     [java] Fri 00:34: Compiling kernel "ThinKernelPart1_45"
+     [java] Fri 00:34: 
+     [java] Fri 00:34: Compiling kernel "ThinKernelPart2_45"
+     [java] Fri 00:34: 
+     [java] Fri 00:34: Compiling kernel "ThinKernelPart1_46"
+     [java] Fri 00:34: 
+     [java] Fri 00:34: Compiling kernel "ThinKernelPart2_46"
+     [java] Fri 00:34: 
+     [java] Fri 00:34: Compiling kernel "ThinKernelPart1_47"
+     [java] Fri 00:34: 
+     [java] Fri 00:34: Compiling kernel "ThinKernelPart2_47"
+     [java] Fri 00:34: 
+     [java] Fri 00:34: Compiling kernel "ThinKernelPart1_48"
+     [java] Fri 00:34: 
+     [java] Fri 00:34: Compiling kernel "ThinKernelPart2_48"
+     [java] Fri 00:34: 
+     [java] Fri 00:34: Compiling kernel "ThinKernelPart1_49"
+     [java] Fri 00:34: 
+     [java] Fri 00:34: Compiling kernel "ThinKernelPart2_49"
+     [java] Fri 00:36: Generating input files (VHDL, netlists, MegaWizard/CoreGen)
+     [java] Fri 00:54: Running back-end  build (12 phases)
+     [java] Fri 00:54: (1/12) - Prepare MaxFile Data (GenerateMaxFileDataFile)
+     [java] Fri 00:54: (2/12) - Synthesize DFE Modules (XST)
+     [java] Fri 02:06: (3/12) - Link DFE Modules (NGCBuild)
+     [java] Fri 02:06: (4/12) - Prepare for Resource Analysis (EDIF2MxruBuildPass)
+     [java] Fri 02:09: (5/12) - Generate Preliminary Annotated Source Code (PreliminaryResourceAnnotationBuildPass)
+     [java] Fri 02:10: (6/12) - Report Resource Usage (XilinxPreliminaryResourceSummary)
+     [java] Fri 02:10: 
+     [java] Fri 02:10: PRELIMINARY RESOURCE USAGE
+     [java] Fri 02:10: Logic utilization:     309974 / 297600 (104.16%)
+     [java] Fri 02:10:   LUTs:                227057 / 297600 (76.30%)
+     [java] Fri 02:10:   Primary FFs:         255377 / 297600 (85.81%)
+     [java] Fri 02:10: Multipliers (25x18):     1600 / 2016   (79.37%)
+     [java] Fri 02:10:   DSP blocks:            1600 / 2016   (79.37%)
+     [java] Fri 02:10: WARNING: Logic utilization may be optimized significantly and final utilization can be below 100%.
+     [java] Fri 02:10: Block memory (BRAM18):   1720 / 2128   (80.83%)
+     [java] Fri 02:10: 
+     [java] Fri 02:10: 
+     [java] Fri 02:10: About to start chip vendor Map/Place/Route toolflow. This will take some time.
+     [java] Fri 02:10: For this compile, we estimate this process may take longer than 1 hour.
+     [java] Fri 02:10: We recommend running in simulation to verify correctness before building a DFE configuration.
+     [java] Fri 02:10: 
+     [java] Fri 02:10: (7/12) - Prepare for Placement (NGDBuild)
+     [java] Fri 02:21: (8/12) - Place and Route DFE (XilinxMPPR)
+     [java] Fri 02:21: Executing MPPR with 4 cost tables and 1 thread.
+     [java] Fri 02:21: MPPR: Starting 4 cost tables
+     [java] Fri 05:19: MPPR: Cost table 1 met timing with score 0 (best score 0)
+     [java] Fri 05:19: (9/12) - Prepare for Resource Analysis (XDLBuild)
+     [java] Fri 05:22: (10/12) - Generate Resource Report (XilinxResourceUsageBuildPass)
+     [java] Fri 05:22: (11/12) - Generate Annotated Source Code (XilinxResourceAnnotationBuildPass)
+     [java] Fri 05:23: (12/12) - Generate MaxFile (GenerateMaxFileXilinx)
+     [java] Fri 05:40: 
+     [java] Fri 05:40: FINAL RESOURCE USAGE
+     [java] Fri 05:40: Logic utilization:     220077 / 297600 (73.95%)
+     [java] Fri 05:40:   LUTs:                192210 / 297600 (64.59%)
+     [java] Fri 05:40:   Primary FFs:         181610 / 297600 (61.02%)
+     [java] Fri 05:40:   Secondary FFs:        64793 / 297600 (21.77%)
+     [java] Fri 05:40: Multipliers (25x18):     1200 / 2016   (59.52%)
+     [java] Fri 05:40:   DSP blocks:            1200 / 2016   (59.52%)
+     [java] Fri 05:40: Block memory (BRAM18):   1722 / 2128   (80.92%)
+     [java] Fri 05:40: 
+     [java] Fri 05:40: MaxFile: /home/a1308699/projects/ThinningAdvanced/RunRules/DFE/maxfiles/Vectors_VECTIS_DFE/results/Vectors.max (MD5Sum: 380ea370a274fba33ee60dd41550141b)
+     [java] Fri 05:40: Build completed: Fri Jun 08 05:40:47 CEST 2018 (took 5 hours, 8 mins, 31 secs)
+     [exec] Current OS is Linux
+     [exec] Executing '/opt/maxcompiler/lib/MaxIDE/copyBuildResults.sh' with arguments:
+     [exec] '-p'
+     [exec] 'DFE'
+     [exec] 
+     [exec] The ' characters around the executable and arguments are
+     [exec] not part of the command.
+
+runresult:
+     [echo] Checking java run result: exit status = 0
+
+all:
+
+BUILD SUCCESSFUL
+Total time: 308 minutes 34 seconds
+make[2]: Leaving directory `/home/a1308699/projects/ThinningAdvanced/RunRules/DFE'
+make[1]: Leaving directory `/home/a1308699/projects/ThinningAdvanced/RunRules/DFE'
+make -f Makefile.rules build
+make[1]: Entering directory `/home/a1308699/projects/ThinningAdvanced/CPUCode'
+set -e; rm -f ../RunRules/DFE/objects/c/ppmIO.d ;                                                             \
+	  cc -M -std=gnu99 -g -O3 -Wall -Wextra -I../RunRules/DFE/include  -I '/opt/maxcompiler/include/slic'  -Wno-error ppmIO.c > ../RunRules/DFE/objects/c/ppmIO.d.$$ ;                                 \
+      sed 's,\(ppmIO\)\.o[ :]*,../RunRules/DFE/objects/c/\1.o ../RunRules/DFE/objects/c/ppmIO.d : ,g' < ../RunRules/DFE/objects/c/ppmIO.d.$$ > ../RunRules/DFE/objects/c/ppmIO.d; \
+      rm -f ../RunRules/DFE/objects/c/ppmIO.d.$$
+set -e; rm -f ../RunRules/DFE/objects/c/VectorsCpuCode.d ;                                                             \
+	  cc -M -std=gnu99 -g -O3 -Wall -Wextra -I../RunRules/DFE/include  -I '/opt/maxcompiler/include/slic'  -Wno-error VectorsCpuCode.c > ../RunRules/DFE/objects/c/VectorsCpuCode.d.$$ ;                                 \
+      sed 's,\(VectorsCpuCode\)\.o[ :]*,../RunRules/DFE/objects/c/\1.o ../RunRules/DFE/objects/c/VectorsCpuCode.d : ,g' < ../RunRules/DFE/objects/c/VectorsCpuCode.d.$$ > ../RunRules/DFE/objects/c/VectorsCpuCode.d; \
+      rm -f ../RunRules/DFE/objects/c/VectorsCpuCode.d.$$
+make[1]: Leaving directory `/home/a1308699/projects/ThinningAdvanced/CPUCode'
+make[1]: Entering directory `/home/a1308699/projects/ThinningAdvanced/CPUCode'
+"/opt/maxcompiler/bin/sliccompile" ../RunRules/DFE/maxfiles/Vectors.max ../RunRules/DFE/objects/maxfiles/slic_Vectors.o
+Processing maxfile for VECTIS from '../RunRules/DFE/maxfiles/Vectors.max'.
+/opt/maxcompiler/lib/clang/bin/start.sh clang -fgnu89-inline -pipe -O0 -std=gnu99 -Wall -Werror -frandom-seed=foo -Wno-unused-variable -Wno-unused-function -fPIC -I /opt/maxcompiler/include/slic -DMAXFILE_INC="/dev/null" -DSLIC_NO_DESTRUCTORS -c /tmp/sliccompile_4779458323166585294/cobject/max_6814404848270222586.c -o /tmp/sliccompile_4779458323166585294/cobject/max_6814404848270222586.c.o 
+/opt/maxcompiler/lib/clang/bin/start.sh clang -fgnu89-inline -pipe -O0 -std=gnu99 -Wall -Werror -frandom-seed=foo -Wno-unused-variable -Wno-unused-function -fPIC -I /opt/maxcompiler/include/slic -DMAXFILE_INC="/home/a1308699/projects/ThinningAdvanced/CPUCode/../RunRules/DFE/maxfiles/Vectors.max" -DSLIC_NO_DESTRUCTORS -c /opt/maxcompiler/src/slicinterface/MaxFileInit.c -o max_3926560351099458088.o 
+ld -r /tmp/sliccompile_4779458323166585294/cobject/max_6814404848270222586.c.o max_3926560351099458088.o -o slic_Vectors.o 
+Copying .max file C object into '/home/a1308699/projects/ThinningAdvanced/CPUCode/../RunRules/DFE/objects/maxfiles'
+cc -std=gnu99 -g -O3 -Wall -Wextra -I../RunRules/DFE/include  -I '/opt/maxcompiler/include/slic'  -c VectorsCpuCode.c -o ../RunRules/DFE/objects/c/VectorsCpuCode.o
+cc -std=gnu99 -g -O3 -Wall -Wextra -I../RunRules/DFE/include  -I '/opt/maxcompiler/include/slic'  -c ppmIO.c -o ../RunRules/DFE/objects/c/ppmIO.o
+cc -std=gnu99 -g -O3 -Wall -Wextra -I../RunRules/DFE/include  -I '/opt/maxcompiler/include/slic'  -o ../RunRules/DFE/binaries/Vectors ../RunRules/DFE/objects/maxfiles/slic_Vectors.o ../RunRules/DFE/objects/c/VectorsCpuCode.o ../RunRules/DFE/objects/c/ppmIO.o -g -O3  -L '/opt/maxcompiler/lib' -lslic -L '/opt/maxeler/maxeleros/lib' -lmaxeleros -lpthread -lm -lrt 
+make[1]: Leaving directory `/home/a1308699/projects/ThinningAdvanced/CPUCode'

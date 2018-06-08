@@ -1,0 +1,66 @@
+package vectors;
+
+import com.maxeler.maxcompiler.v2.build.EngineParameters;
+import com.maxeler.maxcompiler.v2.managers.custom.CustomManager;
+import com.maxeler.maxcompiler.v2.managers.custom.DFELink;
+import com.maxeler.maxcompiler.v2.managers.custom.blocks.KernelBlock;
+import com.maxeler.maxcompiler.v2.managers.engine_interfaces.CPUTypes;
+import com.maxeler.maxcompiler.v2.managers.engine_interfaces.EngineInterface;
+import com.maxeler.maxcompiler.v2.managers.engine_interfaces.InterfaceParam;
+
+class VectorsManager extends CustomManager {
+	
+	private static int width = 3840, height = 2160, maxIt = 50;
+
+	VectorsManager(EngineParameters engineParameters) {
+		super(engineParameters);	
+
+		KernelBlock[] kernels = new KernelBlock[2*maxIt];
+
+		for (int i=0; i<2*maxIt; i+=2) {
+			int it = i/2;
+			kernels[i] = addKernel(new VectorsKernel(makeKernelParameters("ThinKernelPart1_" + it), width, height, 0));
+			kernels[i+1] = addKernel(new VectorsKernel(makeKernelParameters("ThinKernelPart2_" + it), width, height, 1));
+		}
+
+		DFELink x = addStreamFromCPU("inImage");
+
+		kernels[0].getInput("inImage") <== x;
+
+		for (int i=1; i<2*maxIt; i++) {
+			kernels[i].getInput("inImage") <== kernels[i-1].getOutput("outImage");
+		}		
+
+		DFELink y = addStreamToCPU("outImage");
+		y <== kernels[2*maxIt-1].getOutput("outImage");
+	}
+
+	static EngineInterface interfaceDefault() {
+	
+		EngineInterface ei = new EngineInterface();
+		InterfaceParam size = ei.addParam("dataSize", CPUTypes.UINT64);
+
+		for (int i=0; i<maxIt; i++) {
+			ei.setTicks("ThinKernelPart1_" + i, size);
+			ei.setTicks("ThinKernelPart2_" + i, size);
+		}
+
+		ei.setStream("inImage", CPUTypes.UINT32, size * CPUTypes.UINT32.sizeInBytes());
+		ei.setStream("outImage", CPUTypes.UINT32, size * CPUTypes.UINT32.sizeInBytes());
+
+		return ei;
+
+	}
+
+	public static void main(String[] args) {
+		EngineParameters params = new EngineParameters(args);
+		VectorsManager manager = new VectorsManager(params);
+		
+		//manager.setIO(IOType.ALL_CPU);
+		manager.addMaxFileConstant("width", width);
+		manager.addMaxFileConstant("height", height);
+		manager.createSLiCinterface(interfaceDefault());
+		manager.build();
+	}
+
+}
